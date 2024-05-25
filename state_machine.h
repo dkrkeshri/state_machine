@@ -1,13 +1,14 @@
 
 #include<stdio.h>
 
+//state Define
 typedef enum state{
 	suspend,
 	waiting,
 	resume
 }e_state;
 
-
+//Event Define
 typedef enum event{
 	event_1,
 	event_2,
@@ -15,5 +16,10 @@ typedef enum event{
 	event_4
 }e_event;
 
+//Buffer define for capture the state changes
 
-e_state state_handler(e_state state, e_event event);
+typedef struct {
+	e_state current_state; 
+}stateBuffer;
+
+e_state state_handler(stateBuffer * buffer, e_event event);
