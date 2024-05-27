@@ -1,0 +1,4 @@
+ 1. To create a 4 process each process will have its own states. Each process can receive any of the events, modefy events to convey process information.
+
+a. event should have event type and process
+b. create 4 process (state ) as per scheduler
