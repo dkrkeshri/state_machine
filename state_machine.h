@@ -20,8 +20,7 @@ typedef enum event{
 //define a structure for state buffer
 typedef struct {
 
-	e_state states[SIZE_MAX];
-	int count;
+	e_state current_state;
 }StateBuffer;
 
 //define a structure for represent a process
@@ -29,8 +28,7 @@ typedef struct {
 	
 	int process_id;
 	e_event event_type;
-	StateBuffer Buffer;
-}process;
+}event;
 
 
-e_state state_handler(process *process, e_event event);
+e_state state_handler(event *events, StateBuffer *State_Buffer);
