@@ -15,13 +15,13 @@ typedef enum event{
 	event_4
 }e_event;
 
-#define SIZE_MAX 100
-
-//define a structure for state buffer
+//define a structure for represent process
 typedef struct {
 
+	int process_id;
+	int core_id;
 	e_state current_state;
-}StateBuffer;
+}Process;
 
 //define a structure for represent a process
 typedef struct {
@@ -31,4 +31,6 @@ typedef struct {
 }event;
 
 
-e_state state_handler(event *events, StateBuffer *State_Buffer);
+e_state state_handler(event *events, Process *Processes);
+void round_robin_scheduler(Process *Processes, event *events, int processes_num, int events_num, int core);
+void stop();
